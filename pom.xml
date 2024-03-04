@@ -14,7 +14,6 @@
 	<name>ees-ms-api-gateway</name>
 	<description>Enexse Intranet API Gateway Microservice</description>
 	<properties>
-		<java.version>15</java.version>
 		<spring-cloud.version>2020.0.3</spring-cloud.version>
 	</properties>
 	<dependencies>
