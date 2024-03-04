@@ -21,13 +21,13 @@ pipeline {
         }
         // stage('Build Docker Image Stage') {
         //     steps {
-        //         sh 'docker build -t enexse/ees-ms-accounting .'
+        //         sh 'docker build -t enexse/ees-ms-cloud-gateway .'
         //     }
         // }
         // stage('Push Docker Image Stage') {
         //     steps {
         //         sh 'docker login -u enexse -p Softwares@1234*'
-        //         sh 'docker push enexse/ees-ms-accounting'
+        //         sh 'docker push enexse/ees-ms-cloud-gateway'
         //     }
         // }
         stage('Deploy to GKE Stage') {
