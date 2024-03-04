@@ -16,10 +16,16 @@ spec:
     spec:
       containers:
         - name: ees-ms-cloud-gateway-app
-          image: enexse/ees-ms-cloud-gateway-app:latest # Image that will be used to containers in the cluster
+          image: enexse/ees-ms-cloud-gateway:latest # Image that will be used to containers in the cluster
           imagePullPolicy: Always
           ports:
             - containerPort: 9010 # The port that the container is running on in the cluster
+          env:
+          - name: EUREKA_SERVER_ADDRESS
+            valueFrom:
+              configMapKeyRef:
+                name: eureka-cm
+                key: eureka_service_address
 
 ---
 

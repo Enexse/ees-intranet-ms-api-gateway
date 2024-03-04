@@ -1,6 +1,9 @@
 server:
   port: 9010
 spring:
+  profiles:
+    active:
+      - prod
   application:
     name: EES-API-GATEWAY
   main:
@@ -37,35 +40,3 @@ spring:
 #            args:
 #              name: EES-MS-ACCOUNTING-BREAKER
 #              fallbackuri: forward:/accountingServiceFallBack
-eureka:
-  instance:
-    prefer-ip-address: true
-    hostname: localhost #eureka-0
-    lease-renewal-interval-in-seconds: 10
-  client:
-    service-url:
-      defaultZone: http://localhost:8761/eureka/ #http://eureka-0.eureka.default.svc.cluster.local:8761/eureka
-    fetch-registry: true
-    healthcheck:
-      enabled: true
-    register-with-eureka: true
-zuul:
-  routes:
-    EES-MS-USERS:
-      path: /api/v1/**
-    user-service:
-      url: http://localhost:9190
-    EES-MS-ACCOUNTING:
-      path: /api/v1/**
-    accounting-service:
-      url: http://localhost:9191
-  sensitive-headers:
-    - Cookie
-    - Set-Cookie
-  add-proxy-headers: false
-  host:
-    connect-timeout-millis: 90000
-    socket-timeout-millis: 90000
-ribbon:
-  eureka:
-    enabled: true
