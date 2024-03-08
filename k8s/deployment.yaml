@@ -38,6 +38,7 @@ spec:
     app: ees-ms-cloud-gateway-app
   ports:
     - port: 80 # The port that the service is running on in the cluster
-      protocol: HTTPS
+      protocol: TCP
       targetPort: 9010 # The port exposed by the service
+  externalTrafficPolicy: Local
   type: LoadBalancer # type of the service.
