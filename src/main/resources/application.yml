@@ -3,7 +3,7 @@ server:
 spring:
   profiles:
     active:
-      - prod
+      - ${ENVIRONMENT}
   application:
     name: EES-API-GATEWAY
   main:
